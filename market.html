@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магазин - Маркетплейс</title>
+    <link rel="stylesheet" href="css/marketCss.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tonconnect/ui@0.0.9/dist/tonconnect-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/navbarCSS.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <script src="js/market.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark mybg">
+      <div class="container">
+        <a class="navbar-brand logoPI" href="#"
+          ><img src="images/logo.png" alt="Логотип" width="40"
+        /></a>
+        <p class="logoP">Aero-oil</p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Головна</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">Реєстрація</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="cabinetBtn">Особистий кабінет</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Новини та акції</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Мапа</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_company.html">Про компанію</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="market.html">Магазин</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <h1>Онлайн-магазин</h1>
+      <p>Оберіть категорію для перегляду товарів</p>
+    </header>
+
+    
+    <div class="category-switcher">
+      <button onclick="showCategory('products')" class="switch-btn active">
+        Продукти
+      </button>
+      <button onclick="showCategory('auto')" class="switch-btn">
+        Автотовари та послуги
+      </button>
+    </div>
+
+    <div class="category-content">
+      <div id="products" class="category-section active">
+        <div class="subcategory">
+          <h3 class="items">Напої</h3>
+          <div class="items">
+            <div class="item-card">
+              <img src="images/market/greentea.jpg" alt="Чай" />
+              <h4>Зелений чай</h4>
+              <p>Освіжаючий зелений чай</p>
+              <span class="price">₴25</span>
+              <button
+                class="buy-btn"
+                data-id="1"
+                data-name="Зелений чай"
+                data-price="25"
+              >
+                Купити
+              </button>
+            </div>
+            <div class="item-card">
+              <img src="images/market/blacktea.jpg" alt="Чай" />
+              <h4>Чорний чай</h4>
+              <p>Міцний чорний чай з цукром</p>
+              <span class="price">₴25</span>
+              <button
+                class="buy-btn"
+                data-id="2"
+                data-name="Чорний чай"
+                data-price="25"
+              >
+                Купити
+              </button>
+            </div>
+            <div class="item-card">
+              <img src="images/market/espreeso.jpg" alt="Кава" />
+              <h4>Кава (еспресо)</h4>
+              <p>Ароматна чорна натуральна кава</p>
+              <span class="price">₴30</span>
+              <button
+                class="buy-btn"
+                data-id="3"
+                data-name="Кава"
+                data-price="30"
+              >
+                Купити
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="subcategory">
+            <h3 class="items">Їжа</h3>
+            <div class="items">
+              <div class="item-card">
+                <img src="images/market/hotdog.jpg" alt="Хот-дог" />
+                <h4>Хот-дог</h4>
+                <p>Соковитий хот-дог з кетчупом</p>
+                <span class="price">₴50</span>
+                <button
+                  class="buy-btn"
+                  data-id="4"
+                  data-name="Хот-дог"
+                  data-price="50"
+                >
+                  Купити
+                </button>
+              </div>
+              <div class="item-card">
+                <img src="images/market/byrger.jpg" alt="бургер" />
+                <h4>Бургер</h4>
+                <p>Бургер з яловичою котлетою</p>
+                <span class="price">₴75</span>
+                <button
+                  class="buy-btn"
+                  data-id="5"
+                  data-name="Бургер"
+                  data-price="75"
+                >
+                  Купити
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div id="auto" class="category-section">
+        
+        <div class="subcategory">
+          <h3 class="items">Автотовари</h3>
+          <div class="items">
+            <div class="item-card">
+              <img src="images/market/maslo.jpg" alt="Масло" />
+              <h4>Моторне масло високої якості різних брендів</h4>
+              <p>Найкраще масло для двигуна</p>
+              <span class="price">₴200</span>
+              <button
+                class="buy-btn"
+                data-id="6"
+                data-name="Моторне масло"
+                data-price="200"
+              >
+                Купити
+              </button>
+            </div>
+
+            <div class="item-card">
+              <img src="images/market/stekloochist.jpg" alt="Склоочисник" />
+              <h4>Універсальні щітки склоочисника</h4>
+              <p>Ефективне очищення скла</p>
+              <span class="price">₴100</span>
+              <button
+                class="buy-btn"
+                data-id="7"
+                data-name="Щітки склоочисника"
+                data-price="200"
+              >
+                Купити
+              </button>
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="subcategory">
+          <h3 class="items">Послуги СТО</h3>
+          <div class="items">
+            <div class="item-card">
+              <h4>ТО двигуна</h4>
+              <p>
+                Повне технічне обслуговування двигуна від СТО "ATS -
+                АвтоТехСервіс"
+              </p>
+              <span class="price">₴600</span>
+              <button
+                class="buy-btn"
+                data-id="8"
+                data-name="ТО"
+                data-price="600"
+              >
+                Купити
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-section container my-5">
+      <h2 class="text-center mb-4">Кошик</h2>
+      <div id="cart-items">
+        <p>Ваш кошик порожній</p>
+      </div>
+      <div id="cart-summary" class="text-end mt-3"></div>
+
+      <div class="checkout-section">
+        <button class="checkout-btn" onclick="openCheckout()">
+          Оформити замовлення
+        </button>
+        <p></p>
+        <hr class="my-4" />
+        <p>
+          Або ви можете здійснити онлайн-оплату криптовалютою через TonConnect
+          ⬇️
+        </p>
+        <button class="checkout-btn-ton" onclick="openTonCheckout()">
+          Оплатити замовлення (TonConnect)
+        </button>
+      </div>
+    </div>
+    <script src="js/market.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <div
+      id="toast-container"
+      class="position-fixed top-0 end-0 p-3"
+      style="z-index: 9999"
+    ></div>
+    <script>
+      document.querySelector("#cabinetBtn").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const uid = sessionStorage.getItem("UID");
+
+        if (uid) {
+          window.location.href = "personal_cabinet.html";
+        } else {
+          window.location.href = "validation.html";
+        }
+      });
+    </script>
+  </body>
+</html>

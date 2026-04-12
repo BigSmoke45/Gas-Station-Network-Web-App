@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/validCSS.css">
+    <link rel="stylesheet" type="text/css" href="css/navbarCSS.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+    rel="stylesheet"
+  />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Авторизація</title>
+    <script src="js/validJS.js" type="module"></script>
+</head>
+
+<body id="bodyValidation">
+    <nav class="navbar navbar-expand-lg navbar-dark mybg">
+        <div class="container">
+          <a class="navbar-brand logoPI" href="#"
+            ><img src="images/logo.png" alt="Логтип" width="40"
+          /></a>
+          <p class="logoP">Aero-oil</p>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Головна</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="registration.html"
+                  >Реєстрація</a
+                >
+              </li>
+              <li class="nav-item">
+              <a class="nav-link active" href="#" id="cabinetBtn">Особистий кабінет</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">Новини та акції</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="map.html">Мапа</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_company.html">Про компанію</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="market.html">Магазин</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <main>
+      
+        <div class="circle"></div>
+        <div class="register-form">
+
+          <h1 class="form-title">Авторизація</h1>
+          <div class="form-fields">
+              <div class="form-fields">
+                  <input type="text" placeholder="Логін (пошта)" id="name">
+              </div>
+  
+              <div class="form-fields">
+                  <input type="password" placeholder="Пароль" id="password">
+              </div>
+
+          </div>
+  
+   
+          <div class="form-button">
+              <button class="button" id="find" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Вхід</button>
+              
+              <div class="divider">або</div>
+              <a href="registration.html" class="button-register">Реєстрація</a>
+              <div class="onFirstPage"><a href="index.html" class="onFirstPage">&#8592 Повернутися на головну</a></div>
+          </div>
+        </div>
+        
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Увага!</h1>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <p id="alertText" class="newPforModal"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="okbut" class="btn btn-secondary" data-bs-dismiss="modal">Ок</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"
+      ></script>
+
+      <script>
+      document.querySelector("#cabinetBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const uid = sessionStorage.getItem("UID");
+
+  if (uid) {
+    window.location.href = "personal_cabinet.html";
+  } else {
+    window.location.href = "validation.html";
+  }
+});
+    </script>
+
+</body>
+</html>

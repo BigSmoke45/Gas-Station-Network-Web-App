@@ -1,0 +1,42 @@
+.card {
+  /* border-radius: 2em; */
+  text-align: left;
+  padding: 1em;
+  border-color: #222629 !important;
+  background-color: #222629 !important;
+  text-decoration: none;
+  color: black;
+  pointer-events: none;
+  font-size: larger;
+}
+
+/* .card:hover {
+  color: #0a55bf;
+} */
+
+.card img {
+  border-radius: 5%;
+  width: 88%;
+  margin: auto;
+  /* box-shadow: 0 0 7px rgba(0, 26, 255, 0.5); */
+  /* padding: 0.2em; */
+}
+
+.h1news {
+  /* margin-bottom: 1.5em; */
+  text-align: left;
+  padding: 1em;
+}
+
+.container {
+  max-width: 1450px !important;
+  /* font-size: larger !important; */
+}
+
+.card-body {
+  color: #fff !important;
+}
+
+.card-text {
+  color: #aaaaaa;
+}

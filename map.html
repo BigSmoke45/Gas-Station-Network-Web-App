@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <script src="js/map.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/navbarCSS.css" />
+    <link rel="stylesheet" type="text/css" href="css/map.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+    rel="stylesheet"
+  />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <title>Карта Aero-OIL</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark mybg">
+      <div class="container">
+        <a class="navbar-brand logoPI" href="#"
+          ><img src="images/logo.png" alt="Логтип" width="40"
+        /></a>
+        <p class="logoP">Aero-oil</p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Головна</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">Реєстрація</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="cabinetBtn">Особистий кабінет</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html"
+                >Новини та акції</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="map_choose.html">Мапа</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_company.html">Про компанію</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="market.html">Магазин</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-5">
+        <div class="col">
+          <div class="card2">
+            <h2>Мапа наших станцій</h2>
+
+            <div>
+              <p class="onMapChoose2">
+                На цій мапі ви можете дивитися детальну інформацію про наші станції АЗС та прокладати маршрути за допомогою Google Maps.
+                <br>Також ви можете обрати фільтри відображення наявності пального на станціях (фільтри знаходяться у верхньому правому кутку на мапі)    
+              </p>
+
+            </div>
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  var positionX;
+  var positionY;
+  var sityCode, numberSity;
+
+  if (!numberSity) {
+    numberSity = "1";
+    sessionStorage.setItem("MapSity", numberSity);
+  }
+
+  switch (numberSity) {
+    case "1":
+      positionX = 49.990505;
+      positionY = 36.231022;
+      break;
+  }
+
+  showTheMap(positionX, positionY);
+</script>
+
+    <script>
+      document.querySelector("#cabinetBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const uid = sessionStorage.getItem("UID");
+
+  if (uid) {
+    window.location.href = "personal_cabinet.html";
+  } else {
+    window.location.href = "validation.html";
+  }
+});
+    </script>
+
+</html>

@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  height: 45px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3b5983;
+  border: 2px solid #e9f2ff;
+  border-radius: 5px;
+  padding-left: 25px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #c1d9fd;
+}
+
+main {
+  background: #f1f5fe;
+  /* width: 100vw; */
+  height: 92.29vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: fixed;
+  z-index: 1;
+  width: 534px;
+  height: 534px;
+  border-radius: 50%;
+  background: #f7faff;
+  box-shadow: 0px 4px 70px 6px rgba(217, 229, 255, 0.25);
+  animation-name: fadeCircle;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeCircle {
+  0% {
+    width: 1994px;
+    height: 1994px;
+  }
+  10% {
+    width: 1848px;
+    height: 1848px;
+  }
+  20% {
+    width: 1702px;
+    height: 1702px;
+  }
+  30% {
+    width: 1556px;
+    height: 1556px;
+  }
+  40% {
+    width: 1410px;
+    height: 1410px;
+  }
+  50% {
+    width: 1264px;
+    height: 1264px;
+  }
+  60% {
+    width: 1118px;
+    height: 1118px;
+  }
+  70% {
+    width: 972px;
+    height: 972px;
+  }
+  80% {
+    width: 826px;
+    height: 826px;
+  }
+  90% {
+    width: 680px;
+    height: 680px;
+  }
+  100% {
+    width: 534px;
+    height: 534px;
+  }
+}
+
+.register-form {
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 415px;
+  width: 85%;
+  background: #fff;
+  box-shadow: 0px 6px 50px rgba(217, 229, 255, 0.7);
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  animation-name: fadeForm;
+  animation-duration: 0.65s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+@keyframes fadeForm {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-title {
+  color: #30507d;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 38px;
+}
+
+.form-fields {
+  margin-bottom: 13px;
+}
+
+.button {
+  font-weight: bold;
+  display: block;
+  height: 35px;
+  width: 100%;
+  background: #247fff;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+}
+
+.button:hover {
+  background-color: #0d6cf2;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button-register {
+  font-weight: bold;
+  display: block;
+  height: 35px;
+  width: 100%;
+  background: #f2f6ff;
+  border-radius: 5px;
+  color: #c6cfdc;
+  text-align: center;
+  line-height: 35px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.button-register:hover {
+  background: #e2e6f0;
+  color: black;
+}
+
+.divider {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #405d87;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.onFirstPage {
+  font-weight: 500;
+  font-size: 14px;
+  color: #405d87;
+  padding-top: 15px;
+}
+
+.onFirstPage:hover {
+  color: #0a55bf;
+}
+
+.navbar {
+  z-index: 2;
+}
+
+.navbar-brand {
+  margin-right: 0.5em !important;
+}
+
+.newPforModal {
+  padding: 0em;
+  margin: 0%;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #e9f2ff;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #3b5983;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.google-button:hover {
+  background-color: #f1f5fe;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-logo {
+  height: 20px;
+  margin-right: 10px;
+}

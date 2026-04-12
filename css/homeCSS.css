@@ -1,0 +1,126 @@
+.card {
+  border-radius: 10% !important;
+  text-align: center;
+  padding: 1em;
+  background-color: #474a4f !important;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  background: linear-gradient(to bottom, #2e2e2e, #1b1b1b);
+  color: #d6d6d6;
+  font-family: "Roboto", sans-serif;
+}
+
+.card:hover {
+  background-color: #37393d !important;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  border-radius: 50%;
+  width: 85%;
+  margin: auto;
+  box-shadow: 0 0 8px #72bb53;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  /* padding: 0.2em; */
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #72bb53;
+}
+
+.card-text {
+  color: #d6d6d6;
+}
+
+.btnPrim2 {
+  background-color: #629c44 !important;
+  border-color: black !important;
+  border-radius: 20px !important;
+  border-width: 1px !important;
+}
+
+.btnPrim2:hover {
+  background-color: #4c7a34 !important;
+}
+
+.card2 {
+  text-align: left;
+  /* border-color: #f1f5fe !important; */
+
+  text-decoration: none;
+  color: #aaaaaa;
+  font-size: larger;
+}
+
+.card2 h2 {
+  font-size: 300%;
+  color: #fff !important;
+}
+
+.card2 p {
+  font-size: 150%;
+  margin-bottom: 3em;
+}
+.card-img-2 {
+  border-radius: 10% !important;
+  width: 100%;
+  margin: auto;
+  width: 100% !important;
+  margin: auto !important;
+  box-shadow: none !important;
+  padding: 0.2em !important;
+}
+
+.row2 {
+  flex-direction: row-reverse !important;
+  padding-top: 5em !important;
+  padding-bottom: 5em !important;
+}
+
+.container2 {
+  font-size: larger !important;
+  padding-bottom: 7em !important;
+}
+
+.form-selectMy {
+  margin-top: 0.5em;
+  font-size: 85% !important;
+  display: inline-block !important;
+  width: max-content !important;
+  background-color: #d6d6d6 !important;
+}
+
+.btnNumber {
+  --bs-btn-font-size: 80% !important;
+  margin-bottom: 0.5%;
+  background-color: #629c44 !important;
+  border-color: black !important;
+  border-radius: 20px !important;
+  border-width: 1px !important;
+}
+
+.btnNumber:hover {
+  background-color: #4c7a34 !important;
+}
+
+.inpNumb {
+  font-size: 85% !important;
+  background-color: #d6d6d6 !important;
+}
+
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.my-5 {
+  margin-bottom: 1rem !important;
+}

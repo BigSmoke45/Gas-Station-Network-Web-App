@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.payment-container {
+  width: 360px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+h1 {
+  margin-bottom: 16px;
+}
+.amount {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.connect-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+#connect-button .ton-connect-button {
+  width: 100%;
+  max-width: 280px;
+}
+.ton-button {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 12px auto;
+  padding: 12px;
+  font-size: 1em;
+  color: #fff;
+  background: #0098ea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.ton-button:hover {
+  background: #007ac2;
+}
+.wallet-info {
+  text-align: left;
+  margin-top: 20px;
+  word-break: break-word;
+}
+.wallet-info p {
+  margin: 8px 0 4px;
+}
+.wallet-info span {
+  display: block;
+  font-family: monospace;
+}
+.hidden {
+  display: none;
+}
+.error {
+  color: red;
+  margin-top: 12px;
+}

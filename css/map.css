@@ -1,0 +1,80 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 66vh;
+  width: 66vw;
+  z-index: 1;
+  margin: auto;
+}
+
+.card2 {
+  text-align: left;
+  border-color: #222629 !important;
+  background-color: #222629 !important;
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
+
+.onMapChoose {
+  /* font-weight: 500; */
+  /* font-size: 14px; */
+  padding-top: 15px;
+  text-decoration: none;
+  padding-bottom: 15px;
+}
+
+h2 {
+  color: #fff;
+}
+
+.onFirstPage {
+  color: #92d36e !important;
+}
+
+.onFirstPage:hover {
+  color: #72bb53 !important;
+}
+
+.onMapChoose2 {
+  /* font-weight: 500; */
+  /* font-size: 14px; */
+  padding-top: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.leaflet-control-layers {
+  background: #ffffff;
+  color: black;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  font-family: 'Roboto', sans-serif;
+}
+
+.leaflet-control-layers label {
+  display: block;
+  padding: 6px 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.leaflet-control-layers label:hover {
+  background: #d7dade;
+}
+
+.leaflet-control-layers input {
+  margin-right: 8px;
+}
+
+.leaflet-control-layers-expanded {
+  width: 250px;
+}

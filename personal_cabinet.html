@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Особистий кабінет</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/personal_cabinetCSS.css" />
+    <link rel="stylesheet" type="text/css" href="css/navbarCSS.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/personal_cabinetJS.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark mybg">
+      <div class="navbar-container container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/logo.png" alt="Логотип" width="40"
+        /></a>
+        <p class="logoP">Aero-oil</p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Головна</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">Реєстрація</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" id="cabinetBtn">Особистий кабінет</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Новини та акції</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Мапа</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_company.html">Про компанію</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="market.html">Магазин</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="card2 mb-4">
+        <h2>Особисті дані</h2>
+        <p>ПІБ:</p>
+        <input type="text" placeholder="ПІБ" id="namePersCab" disabled />
+        <p>Пошта:</p>
+        <input type="text" placeholder="Пошта" id="mailPersCab" disabled />
+        <a
+          id="exitCabinetBut"
+          class="btn btn-primary btnNumber"
+          href="validation.html"
+          >Вийти з аккаунту</a
+        >
+      </div>
+
+      <div class="card2 mb-4">
+        <h2>Ваші замовлення</h2>
+        <div class="table-wrapper">
+        <table id="ordersTable">
+          <tr>
+            <th>Дата</th>
+            <th>Вид палива</th>
+            <th>Кількість літрів</th>
+            <th>Сума (грн)</th>
+            <th>Бонуси</th>
+          </tr>
+        </table>
+           </div>
+      </div>
+
+      <div class="card2 mb-4">
+        <h2>Аналітика витрат</h2>
+
+        <label for="monthSelect">Оберіть період:</label>
+        <select id="monthSelect" onchange="updateChart()">
+          <option value="altime">За увесь час</option>
+        </select>
+
+        <div class="chart-container">
+          <canvas id="expensesChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card2">
+        <h2>Досягнення та бонуси <span>⛽🏅🚗</span></h2>
+        <p>Накопичені бали: <span id="bonusPoints"></span></p>
+        <div class="achievement">
+          <h3>🏆 Закупка</h3>
+          <p>Купіть 100 літрів палива на наших заправках</p>
+          <p>
+            <strong>Нагорода:</strong> отримайте 7 літрів палива безкоштовно
+          </p>
+          <div class="achievement-progress">
+            <h3>Прогрес:</h3>
+            <div class="progress-bar-container">
+              <div class="progress-bar-one" id="bonusBar" style="width: 60%">
+                <span id="bonusText"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="achievement">
+          <h3>🎖️ Лояльний клієнт</h3>
+          <p>Заправляйтесь тільки у нас більше 10 разів протягом місяця</p>
+          <p>
+            <strong>Нагорода:</strong> отримайте 5% знижку на наступні 3
+            заправки
+          </p>
+          <div class="achievement-progress">
+            <h3>Прогрес:</h3>
+            <div class="progress-bar-container">
+              <div class="progress-bar-two" id="loyalBar" style="width: 70%">
+                <span id="loyalText"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const name = sessionStorage.getItem("Name");
+        const email = sessionStorage.getItem("Email");
+
+        const nameInput = document.getElementById("namePersCab");
+        const mailInput = document.getElementById("mailPersCab");
+
+        if (!name || !email) {
+          alert("Ви не авторизовані");
+          window.location.href = "validation.html";
+          return;
+        }
+        nameInput.value = name;
+        mailInput.value = email;
+      };
+    </script>
+    <script>
+      const bonusProgress =
+        Number(sessionStorage.getItem("BonusProgress")) || 0;
+      const loyalProgress =
+        Number(sessionStorage.getItem("LoyalProgress")) || 0;
+      const bonusPoints = Number(sessionStorage.getItem("BonusPoints")) || 0;
+      const discount = Number(sessionStorage.getItem("Discount")) || 0;
+
+      const bonusPercent = Math.min((bonusProgress / 100) * 100, 100);
+
+      document.getElementById("bonusBar").style.width = bonusPercent + "%";
+
+      document.getElementById("bonusText").innerText =
+        `${bonusProgress} із 100 літрів`;
+
+      const loyalPercent = Math.min((loyalProgress / 10) * 100, 100);
+
+      document.getElementById("loyalBar").style.width = loyalPercent + "%";
+
+      document.getElementById("loyalText").innerText =
+        `${loyalProgress} із 10 разів`;
+
+      document.getElementById("bonusPoints").innerText = bonusPoints;
+    </script>
+
+    <script>
+      const orders = JSON.parse(sessionStorage.getItem("Orders"));
+
+      const table = document.getElementById("ordersTable");
+
+      if (orders) {
+        Object.values(orders).forEach((order) => {
+          const row = `
+      <tr>
+        <td>${order.date}</td>
+        <td>${order.fuel}</td>
+        <td>${order.liters}</td>
+        <td>${order.price}</td>
+        <td>${order.bonus}</td>
+      </tr>
+    `;
+          table.innerHTML += row;
+        });
+      }
+    </script>
+    <script>
+      const a95 = Number(sessionStorage.getItem("TotalA95")) || 0;
+      const a92 = Number(sessionStorage.getItem("TotalA92")) || 0;
+      const diesel = Number(sessionStorage.getItem("TotalDiesel")) || 0;
+      const gas = Number(sessionStorage.getItem("TotalGas")) || 0;
+      const monthlyData = {
+        altime: [a95, a92, diesel, gas],
+      };
+
+      function updateChart() {
+        const selectedMonth = document.getElementById("monthSelect").value;
+        expensesChart.data.datasets[0].data = monthlyData[selectedMonth];
+        expensesChart.update();
+      }
+
+      const ctx = document.getElementById("expensesChart").getContext("2d");
+      const expensesChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["A95", "A92", "Дизельне", "Газ"],
+          datasets: [
+            {
+              data: monthlyData.altime,
+              backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "top",
+              labels: {
+                font: {
+                  size: 18,
+                },
+                color: "#ffffff", 
+              },
+            },
+          },
+        },
+      });
+    </script>
+
+    <script>
+      document
+        .querySelector("#exitCabinetBut")
+        .addEventListener("click", () => {
+          sessionStorage.clear();
+          window.location.href = "index.html";
+        });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.querySelector("#cabinetBtn").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const uid = sessionStorage.getItem("UID");
+
+        if (uid) {
+          window.location.href = "personal_cabinet.html";
+        } else {
+          window.location.href = "validation.html";
+        }
+      });
+    </script>
+  </body>
+</html>

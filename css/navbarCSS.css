@@ -1,0 +1,45 @@
+.mybg {
+  opacity: 1;
+  background: linear-gradient(90deg, #4c7a34, #629c44);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  background-color: #222629 !important;
+  font-family: "Roboto", sans-serif !important;
+}
+
+.navbar-brand {
+  margin-right: 0.5em !important;
+}
+
+.logoP {
+  color: black;
+  display: inline-block;
+  flex-basis: auto;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-family: "Rock Salt", cursive !important;
+  font-size: x-large !important;
+  /* margin-right: 10em; */
+}
+
+.logoPI {
+  pointer-events: none;
+}
+
+.navbar-container {
+  max-width: 1450px !important;
+}
+
+.navbar > .container {
+  justify-content: flex-start !important;
+  display: flex !important;
+  flex-wrap: inherit !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
