@@ -10,7 +10,7 @@ The project uses a separate Node.js backend ([Backend-Aero-Oil](https://github.c
 
 > Frontend hosted on GitHub Pages: [bigsmoke45.github.io/Gas-Station-Network-Web-App](https://bigsmoke45.github.io/Gas-Station-Network-Web-App)
 >
-> Testing login for personal cabinet - test2@gmail.com, password - 123123.
+> Testing login for personal cabinet - testpost1257@gmail.com, password - 1472SqL97.
 >
 > Note on First Request (Render Free Tier)
 The backend is hosted on Render using a free instance.
